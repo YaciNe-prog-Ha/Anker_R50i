@@ -23,11 +23,11 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '783225784746837'); 
+      fbq('init', '1518648616073474'); 
       fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=783225784746837&ev=PageView&noscript=1"
+      src="https://www.facebook.com/tr?id=1518648616073474&ev=PageView&noscript=1"
     /></noscript>
 
     <!-- Google Analytics -->
@@ -1284,7 +1284,7 @@
             try {
                 await fetch(SCRIPT_URL, {
                     method: 'POST',
-                    mode: 'no-cors',
+                    // mode: 'no-cors',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(formData)
                 });
@@ -1313,7 +1313,7 @@
                 updateQuantityDisplay();
                 updatePrice();
                 document.getElementById('priceBreakdownCard').style.display = 'none';
-                selectColor('white');
+                // selectColor('white');
                 
             } catch (error) {
                 showModal(
