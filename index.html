@@ -1281,18 +1281,15 @@
             submitButton.disabled = true;
             submitButton.textContent = 'جاري الإرسال...';
             
-try {
-                console.log('Sending data:', formData);
-                
-                const response = await fetch(SCRIPT_URL, {
+            try {
+                await fetch(SCRIPT_URL, {
                     method: 'POST',
-                    mode: 'no-cors',
+                    // mode: 'no-cors',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(formData)
                 });
                 
-                console.log('Response received');
-                
+                // Facebook Pixel
                 const purchaseValue = parseFloat(totalPriceText.replace(' دج', '').trim());
                 if (typeof fbq === 'function') {
                     fbq('track', 'Purchase', {
@@ -1307,7 +1304,7 @@ try {
                     'success',
                     'تم إرسال طلبك بنجاح!',
                     'شكراً لك! سيتواصل معك فريقنا قريباً لتأكيد الطلب.',
-                    'الاسم: ' + formData.name + '<br>الهاتف: ' + formData.phone + '<br>الولاية: ' + formData.wilaya + '<br>الكمية: ' + formData.quantity + '<br>المجموع: ' + formData.totalPrice
+                    `الاسم: ${formData.name}<br>الهاتف: ${formData.phone}<br>الولاية: ${formData.wilaya}<br>اللون: ${formData.color}<br>الكمية: ${formData.quantity}<br>المجموع: ${formData.totalPrice}`
                 );
                 
                 this.reset();
@@ -1316,22 +1313,21 @@ try {
                 updateQuantityDisplay();
                 updatePrice();
                 document.getElementById('priceBreakdownCard').style.display = 'none';
-                document.getElementById('communeSelect').disabled = true;
+                // selectColor('white');
                 
             } catch (error) {
-                console.error('Error details:', error);
                 showModal(
                     'error',
                     'حدث خطأ!',
                     'عذراً، حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.',
-                    'Error: ' + error.message
+                    ''
                 );
             } finally {
                 submitButton.disabled = false;
                 submitButton.textContent = '🛒 أكد طلبك الآن';
             }
-
         });
+
         // Modal Functions
         function showModal(type, title, message, details) {
             const modal = document.getElementById('customModal');
