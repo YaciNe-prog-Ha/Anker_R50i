@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Facebook Pixel -->
-    <script>
+    <!-- <script>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -28,7 +28,7 @@
     </script>
     <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1518648616073474&ev=PageView&noscript=1"
-    /></noscript>
+    /></noscript> -->
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P3RCP3HC5X"></script>
@@ -390,27 +390,27 @@
             text-align: center;
         }
 
-        /* Price Display */
+/* Price Display - Smaller Version */
         .price-display {
             background: linear-gradient(135deg, var(--success-color), #229954);
-            padding: 30px;
-            border-radius: 15px;
+            padding: 15px;                 /* reduced from 30px */
+            border-radius: 10px;           /* reduced from 15px */
             text-align: center;
             color: white;
-            box-shadow: 0 10px 30px rgba(39, 174, 96, 0.3);
-            margin-bottom: 25px;
+            box-shadow: 0 6px 18px rgba(39, 174, 96, 0.25); /* softer */
+            margin-bottom: 20px;           /* reduced margin */
         }
 
         .price-label {
-            font-size: 1.1em;
+            font-size: 0.9em;              /* smaller text */
             opacity: 0.9;
-            margin-bottom: 10px;
+            margin-bottom: 6px;            /* tighter spacing */
         }
 
         .price-amount {
-            font-size: 3.5em;
-            font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-size: 2.4em;              /* reduced from 3.5em */
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* softer */
         }
 
         /* Features List */
